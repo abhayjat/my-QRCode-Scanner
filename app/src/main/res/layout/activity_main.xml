@@ -18,7 +18,7 @@
         android:layout_width="350dp"
         android:layout_height="wrap_content"
         android:layout_below="@id/enter_val"
-        android:id="@+id/genrate"
+        android:id="@+id/genratebtn"
         android:layout_centerHorizontal="true"
         android:text="GENRATE"
         android:textSize="20dp"
@@ -30,21 +30,22 @@
     <ImageView
         android:layout_width="300dp"
         android:layout_height="320dp"
-        android:layout_below="@id/genrate"
+        android:layout_below="@id/genratebtn"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="80dp"
-        android:background="#808080"
-        android:id="@+id/screener"/>
+        android:layout_marginTop="90dp"
+        android:background="@drawable/imageborder"
+        android:id="@+id/scaGan"/>
 
     <Button
         android:layout_width="350dp"
         android:layout_height="wrap_content"
-        android:layout_below="@id/screener"
+        android:layout_below="@id/scaGan"
         android:layout_centerHorizontal="true"
         android:text="SCAN"
         android:textSize="20dp"
         android:textColor="#fff"
         android:layout_marginTop="80dp"
+        android:id="@+id/scanbtn"
         android:background="#0099ff"/>
 
 
