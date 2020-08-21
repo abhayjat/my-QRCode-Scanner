@@ -6,4 +6,29 @@
     android:layout_height="match_parent"
     tools:context=".ScannerActivity">
 
+    <com.budiyev.android.codescanner.CodeScannerView
+        android:id="@+id/scanner"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:frameAspectRatioHeight="1"
+        app:frameAspectRatioWidth="1"
+        app:frameColor="@android:color/white"
+        app:frameCornersRadius="10dp"
+        app:frameCornersSize="50dp"
+        app:frameSize="0.75"
+        app:frameThickness="2dp"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="600dp"
+        android:id="@+id/resultsc"
+        android:text="Text View"
+        android:textSize="24sp"
+        android:textColor="#ff0"
+        android:textStyle="bold"
+        />
+
 </RelativeLayout>
