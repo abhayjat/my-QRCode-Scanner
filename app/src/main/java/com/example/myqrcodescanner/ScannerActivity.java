@@ -26,19 +26,23 @@ public class ScannerActivity extends AppCompatActivity {
         resultScan=(TextView) findViewById(R.id.resultsc);
         codeScanner=new CodeScanner(this,scannerView);
 
-//        codeScanner.setDecodeCallback(new DecodeCallback() {        //Use setDecodeCallback for convert our scan code.
-//            @Override
-//            public void onDecoded(@NonNull final Result result) {
-//
-//                runOnUiThread(new Runnable() {                      //Use for Every time new QR.
-//                    @Override
-//                    public void run() {
-//                        resultScan.setText(result.getText());       //It give our result data to resultScan.
-//                    }
-//                });
-//            }
-//        });
+        codeScanner.setDecodeCallback(new DecodeCallback() {        //Use setDecodeCallback for convert our scan code.
+            @Override
+            public void onDecoded(@NonNull final Result result) {
 
+                runOnUiThread(new Runnable() {                      //Use for Every time new QR.
+                    @Override
+                    public void run() {
+                        resultScan.setText(result.getText());       //It give our result data to resultScan.
+                    }
+                });
+            }
+        });
+    }
 
+    @Override
+    protected void onResume() {
+        super.onResume();
+        codeScanner.startPreview();
     }
 }

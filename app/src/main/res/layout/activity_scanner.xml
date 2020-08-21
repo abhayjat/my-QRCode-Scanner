@@ -29,6 +29,7 @@
         android:textSize="24sp"
         android:textColor="#ff0"
         android:textStyle="bold"
+        android:textAlignment="center"
         />
 
 </RelativeLayout>
