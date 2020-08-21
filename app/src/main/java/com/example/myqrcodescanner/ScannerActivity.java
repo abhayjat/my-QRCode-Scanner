@@ -4,6 +4,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.view.View;
 import android.widget.TextView;
 
 import com.budiyev.android.codescanner.CodeScanner;
@@ -36,6 +37,13 @@ public class ScannerActivity extends AppCompatActivity {
                         resultScan.setText(result.getText());       //It give our result data to resultScan.
                     }
                 });
+            }
+        });
+
+        scannerView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                codeScanner.startPreview();
             }
         });
     }
