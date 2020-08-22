@@ -4,10 +4,12 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.Manifest;
+import android.content.Intent;
 import android.graphics.Camera;
 import android.os.Bundle;
 import android.view.MotionEvent;
 import android.view.View;
+import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -29,6 +31,7 @@ public class ScannerActivity extends AppCompatActivity {
     //CodeScanner class use for scan the QR code
     CodeScannerView scannerView;
     TextView resultScan;
+    ImageButton gallery;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -37,7 +40,7 @@ public class ScannerActivity extends AppCompatActivity {
         scannerView=(CodeScannerView) findViewById(R.id.scanner);
         resultScan=(TextView) findViewById(R.id.resultsc);
         codeScanner=new CodeScanner(this,scannerView);
-
+        gallery=(ImageButton) findViewById(R.id.gallery);
         codeScanner.setDecodeCallback(new DecodeCallback() {        //Use setDecodeCallback for convert our scan code.
             @Override
             public void onDecoded(@NonNull final Result result) {
@@ -50,6 +53,7 @@ public class ScannerActivity extends AppCompatActivity {
                 });
             }
         });
+
 
         scannerView.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -93,4 +97,11 @@ public class ScannerActivity extends AppCompatActivity {
             }
         }).check();
     }
+
+//    public void btnBrowser(View view) {
+//        Intent pickIntent = new Intent(Intent.ACTION_PICK);
+//        pickIntent.setDataAndType( android.provider.MediaStore.Images.Media.EXTERNAL_CONTENT_URI, "image/*");
+//
+//        startActivityForResult(pickIntent, 111);
+//    }
 }
