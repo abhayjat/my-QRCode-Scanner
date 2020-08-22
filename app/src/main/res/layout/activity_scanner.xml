@@ -30,6 +30,7 @@
         android:textColor="#ff0"
         android:textStyle="bold"
         android:textAlignment="center"
+        android:textIsSelectable="true"
         />
 
 </RelativeLayout>
