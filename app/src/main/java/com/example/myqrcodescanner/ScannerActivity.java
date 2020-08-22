@@ -4,7 +4,9 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.Manifest;
+import android.graphics.Camera;
 import android.os.Bundle;
+import android.view.MotionEvent;
 import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -55,7 +57,17 @@ public class ScannerActivity extends AppCompatActivity {
                 codeScanner.startPreview();
             }
         });
+
+        scannerView.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+                codeScanner.getAutoFocusMode();
+                return false;
+            }
+        });
+
     }
+
 
     @Override
     protected void onResume() {
