@@ -98,10 +98,10 @@ public class ScannerActivity extends AppCompatActivity {
         }).check();
     }
 
-//    public void btnBrowser(View view) {
-//        Intent pickIntent = new Intent(Intent.ACTION_PICK);
-//        pickIntent.setDataAndType( android.provider.MediaStore.Images.Media.EXTERNAL_CONTENT_URI, "image/*");
-//
-//        startActivityForResult(pickIntent, 111);
-//    }
+    public void btnBrowser(View view) {
+        Intent pickIntent = new Intent(Intent.ACTION_PICK);
+        pickIntent.setDataAndType( android.provider.MediaStore.Images.Media.EXTERNAL_CONTENT_URI, "image/*");
+
+        startActivityForResult(pickIntent, 111);
+    }
 }
