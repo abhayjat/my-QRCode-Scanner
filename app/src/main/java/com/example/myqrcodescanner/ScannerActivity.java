@@ -44,7 +44,8 @@ public class ScannerActivity extends AppCompatActivity {
     //CodeScanner class use for scan the QR code
     CodeScannerView scannerView;
     TextView resultScan;
-    ImageButton gallery;
+    ImageButton gallery,backbtn;
+    Intent intentToMainActivity;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -54,7 +55,8 @@ public class ScannerActivity extends AppCompatActivity {
         resultScan=(TextView) findViewById(R.id.resultsc);
         codeScanner=new CodeScanner(this,scannerView);
         gallery=(ImageButton) findViewById(R.id.gallery);
-
+        backbtn=(ImageButton) findViewById(R.id.back);
+        intentToMainActivity=new Intent(this,MainActivity.class);
 
         codeScanner.setDecodeCallback(new DecodeCallback() {        //Use setDecodeCallback for convert our scan code.
             @Override
@@ -77,13 +79,14 @@ public class ScannerActivity extends AppCompatActivity {
             }
         });
 
-        scannerView.setOnTouchListener(new View.OnTouchListener() {
+        backbtn.setOnClickListener(new View.OnClickListener() {
             @Override
-            public boolean onTouch(View v, MotionEvent event) {
-                codeScanner.getAutoFocusMode();
-                return false;
+            public void onClick(View v) {
+                intentToMainActivity=new Intent(v.getContext(),MainActivity.class);
+                startActivity(intentToMainActivity);
             }
         });
+
 
     }
 

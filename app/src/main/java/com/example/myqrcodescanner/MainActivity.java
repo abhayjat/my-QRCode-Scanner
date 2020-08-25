@@ -23,6 +23,7 @@ public class MainActivity extends AppCompatActivity {
     EditText qrValue;
     Button  btngenrator,btnscan;
     ImageView qrimgGen;
+    Intent intentToScannerActivity;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,6 +34,7 @@ public class MainActivity extends AppCompatActivity {
         btngenrator  =(Button) findViewById(R.id.genratebtn);
         qrimgGen=(ImageView) findViewById(R.id.scaGan);
         btnscan = (Button) findViewById(R.id.scanbtn);
+        intentToScannerActivity=new Intent(this,ScannerActivity.class);
 
         btngenrator.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -56,7 +58,8 @@ public class MainActivity extends AppCompatActivity {
         btnscan.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(getApplicationContext(),ScannerActivity.class));
+                intentToScannerActivity=new Intent(view.getContext(),ScannerActivity.class);
+                startActivity(intentToScannerActivity);
             }
         });
     }

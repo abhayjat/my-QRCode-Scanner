@@ -12,12 +12,22 @@
         android:layout_height="wrap_content"
         app:frameAspectRatioHeight="1"
         app:frameAspectRatioWidth="1"
-        app:frameColor="@android:color/white"
-        app:frameCornersRadius="10dp"
+        app:frameColor="#ff0"
+        app:frameCornersRadius="20dp"
         app:frameCornersSize="50dp"
         app:frameSize="0.75"
         app:frameThickness="2dp"
+        app:autoFocusButtonVisible="false"/>
+
+    <ImageButton
+        android:layout_width="50dp"
+        android:layout_height="40dp"
+        android:id="@+id/back"
+        android:background="@drawable/arrow"
+        android:layout_marginTop="15dp"
+        android:layout_marginLeft="10dp"
         />
+
     <ImageButton
         android:layout_width="40dp"
         android:layout_height="40dp"
